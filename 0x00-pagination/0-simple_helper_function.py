@@ -2,9 +2,10 @@
 """
 0-simple_helper_function.py
 """
+from typing import Tuple
 
 
-def index_range(page: int, page_size: int) ->tuple:
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     Helper function to generate start and end index,
     for iterating and paginating a given data.
