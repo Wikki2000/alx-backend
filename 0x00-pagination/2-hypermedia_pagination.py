@@ -68,7 +68,7 @@ class Server:
 
         :rtype - The paginated dataset.
         """
-        data: List = self.dataset()
+        data: List[list] = self.dataset()
         pages: int = math.ceil(len(data) / page_size)
 
         return {
