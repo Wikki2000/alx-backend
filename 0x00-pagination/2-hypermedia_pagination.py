@@ -4,7 +4,7 @@
 """
 import csv
 import math
-from typing import List, Tuple
+from typing import Dict, List, Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
@@ -58,3 +58,23 @@ class Server:
             return self.dataset()[start_index: end_index]
         except IndexError:
             return []
+
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+        """
+        Paginate a large dataset from csv file.
+
+        :page - The page  number to paginate and it's 1-index.
+        :page_size - The number or size of each page.
+
+        :rtype - The paginated dataset.
+        """
+        data: List = self.dataset()
+        pages: int = math.ceil(len(data) / page_size)
+
+        return {
+            "page_size": page_size, "page": page,
+            "data": self.get_page(page, page_size),
+            "next_page": page + 1 if page < pages else None,
+            "prev_page": None if page < 1 else page - 1,
+            "total_pages": pages
+        }

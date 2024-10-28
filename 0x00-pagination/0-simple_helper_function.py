@@ -10,7 +10,7 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
     Helper function to generate start and end index,
     for iterating and paginating a given data.
 
-    :page - The number of page to paginate and it's 1-index.
+    :page - The page number to paginate and it's 1-index.
     :page_size - The number or size of each page.
     :rtype - A tuple of start and end index.
     """
