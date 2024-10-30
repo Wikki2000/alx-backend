@@ -5,6 +5,9 @@ from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
+    """Caching of data by using First in, First out Algorithm
+    """
+
     def __init__(self):
         """ Initialize the cache """
         super().__init__()
@@ -18,11 +21,10 @@ class FIFOCache(BaseCaching):
                 oldest_key = list(self.cache_data.keys())[0]
                 print(f"DISCARD: {oldest_key}")
                 del self.cache_data[oldest_key]
-                
+
             # Add new item to cache
             self.cache_data[key] = item
 
     def get(self, key):
         """ Get an item by key """
         return self.cache_data.get(key)
-

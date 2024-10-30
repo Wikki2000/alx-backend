@@ -3,12 +3,13 @@
 """
 from base_caching import BaseCaching
 
+
 class BasicCache(BaseCaching):
     """Cache data in a dictionary
     """
 
     def put(self, key, item):
-        """ 
+        """
         Put an item in a dict with corresponding key.
 
         :key - The key to store the item in dict.
