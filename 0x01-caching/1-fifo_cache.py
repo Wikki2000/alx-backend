@@ -3,7 +3,8 @@
 
     - Item is append to the end of the cache dict.
     - Once exceed the threshold, the first item is removed.
-    - This item is then replace with the next.
+    - The next item is append again to the end of the cache.
+    - It has a one way it (end) and one out (begining).
 """
 from base_caching import BaseCaching
 
