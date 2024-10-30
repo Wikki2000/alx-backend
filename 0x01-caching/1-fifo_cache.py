@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-""" FIFOCache module
+"""FIFOCache module
+
+    - Item is append to the end of the cache dict.
+    - Once exceed the threshold, the first item is removed.
+    - This item is then replace with the next.
 """
 from base_caching import BaseCaching
 
