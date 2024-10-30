@@ -4,6 +4,8 @@
 from base_caching import BaseCaching
 
 class BasicCache(BaseCaching):
+    """Cache data in a dictionary
+    """
 
     def put(self, key, item):
         """ 
@@ -21,9 +23,4 @@ class BasicCache(BaseCaching):
 
         :key - The key of item to be retrieved.
         """
-        data = self.cache_data.get(key)
-        if not data:
-            return None
-        return data
-
-
+        return self.cache_data.get(key)
