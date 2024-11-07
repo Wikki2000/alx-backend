@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """ 1-app simple flask app with babel """
+
 from flask import Flask, render_template
 from flask_babel import Babel
 
 
-class Config:
+class Config(object):
     """ Config class """
-    LANGUAGES = ['en', 'fr']        # The application supported language.
-    BABEL_DEFAULT_LOCALE = 'en'     # The default language of the application.
-    BABEL_DEFAULT_TIMEZONE = 'UTC'  # The default timezone for the application.
+    LANGUAGES = ['en', 'fr']
+    BABEL_DEFAULT_LOCALE = 'en'
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
 app = Flask(__name__)
